@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 # ... your routes ...
@@ -7,10 +7,6 @@ app = Flask(__name__)
 # but Vercel will ignore it and use the 'app' object directly
 if __name__ == "__main__":
     app.run()
-from flask import Flask, render_template, request, redirect, url_for
-
-app = Flask(__name__)
-
 projects = [
     {
         "title": "Modern Villa",
@@ -56,4 +52,5 @@ def contact():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
