@@ -1,0 +1,582 @@
+/* Core Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', 'Poppins', sans-serif;
+}
+
+:root {
+    --accent: #4f46e5;
+    --dark: #121212;
+}
+
+body {
+    background-color: #f4f7f9;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Background Image Layer */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    /* Remove the linear-gradient to see the raw image */
+    background-image: url('../images/background.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    /* These lines force the browser to stop smoothing the pixels */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+}
+/* Navigation */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 80px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero Section */
+/* Hero Section Layout */
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(79, 70, 229, 0.1);
+    color: #4f46e5;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.1;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 25px 0;
+    max-width: 500px;
+}
+
+/* Service Cards with Glass Effect */
+.services-interactive {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 50px 10%;
+}
+
+.service-card {
+    
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.6);
+    border-color: #4f46e5;
+}
+
+/* Buttons */
+.btn {
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background: #4f46e5;
+    color: white;
+}
+
+
+.btn:hover {
+    transform: scale(1.05);
+}
+/* Contact Page Layout */
+.contact.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 60px 20px;
+}
+
+.contact h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* The Glass Form Card */
+.contact .card.float {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    padding: 50px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input Styling */
+.contact input, 
+.contact textarea {
+    width: 100%;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Engineering Focus Effect */
+.contact input:focus, 
+.contact textarea:focus {
+    border-color: #4f46e5;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Submit Button */
+.contact button {
+    background: #4f46e5;
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact button:hover {
+    background: #4338ca;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* About Page Specific Styles */
+.about-hero {
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+.tag-line {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.main-title .accent {
+    color: var(--accent);
+    -webkit-text-stroke: 1px var(--accent);
+    /* This creates a trendy 'hollow' text effect */
+    color: transparent; 
+}
+
+/* Grid Layout */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* Identity Cards (Left Side) */
+.id-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--accent);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 0 15px 15px 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.id-card:hover {
+    transform: translateX(15px);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.id-card .num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.id-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+/* Skills Section (Right Side) */
+.skills-stack {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.skill-item {
+    margin-bottom: 35px;
+}
+
+.skill-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Progress Bars */
+.bar-container {
+    height: 6px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar-progress {
+    height: 100%;
+    background: var(--accent);
+    width: 0; /* Starts at 0 for animation */
+    animation: slideProgress 1.5s ease-out forwards;
+}
+
+@keyframes slideProgress {
+    to { width: var(--w); }
+}
+
+/* Update Hero to be a two-column layout */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes content to left and right */
+    padding: 0 10%;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* The Slideshow Box on the Right */
+.slideshow-box {
+    position: relative;
+    /* Typical Camera Ratio (4:3) */
+    flex: 0 0 600px; 
+    height: 450px;    
+    
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.slideshow-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.slideshow-box .slide {
+    position: absolute;
+    inset: 0;
+    /* Change 'cover' to 'contain' to see the WHOLE photo */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.1); /* Optional: subtle background for empty space */
+}
+
+.slideshow-box .slide.active {
+    opacity: 1;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .slideshow-box {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+        flex: none;
+    }
+}
+/* Project Archive Styling */
+.portfolio-section {
+    padding: 100px 5% 50px;
+}
+
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Glitch Title Effect */
+.glitch-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    position: relative;
+    letter-spacing: -2px;
+}
+
+.glitch-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--accent);
+    opacity: 0.2;
+    transform: translate(-3px, 2px);
+    z-index: -1;
+}
+
+/* Filter Buttons */
+.filter-controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid #ddd;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Masonry Grid */
+.project-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.8s ease;
+}
+
+/* Overlay on Hover */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(79, 70, 229, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.project-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-id {
+    color: white;
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.view-link {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Details Section */
+.card-details {
+    padding: 25px;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.category-tag {
+    font-size: 10px;
+    color: var(--accent);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.technical-meta {
+    font-size: 11px;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* Hero Slider Container */
+.hero-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 6s linear;
+    image-rendering: -webkit-optimize-contrast; /* Keeps images clear */
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1.05); /* Subtle zoom effect for a premium feel */
+}
+/* The container for the slideshow */
+
+
+/* Adds a subtle blueprint/glass tint over the box */
+.box-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(79, 70, 229, 0.1), transparent);
+    pointer-events: none;
+    z-index: 2;
+}

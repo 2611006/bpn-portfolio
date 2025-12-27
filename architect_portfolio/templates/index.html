@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="cursor-follower"></div>
+<div class="scroll-progress"></div>
+
+<style>
+    /* This ensures the background image from your upload is used specifically for this page */
+    .background-container {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                          url("{{ url_for('static', filename='images/background.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+    }
+</style>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="badge">Architecture • Engineering • Interiors</div>
+        <h1 class="hero-title">
+            Crafting 
+            <span class="dynamic-text-container">
+                <span class="dynamic-text">Structures</span>
+            </span>
+            <br>with Soul.
+        </h1>
+        <p class="hero-text">
+            Where mathematical precision meets artistic vision. We don't just build; we orchestrate environments.
+        </p>
+        <div class="hero-actions">
+            <a href="/projects" class="btn primary">Explore Portfolio</a>
+            <a href="/contact" class="btn glass">The Studio</a>
+        </div>
+    </div>
+
+    <div class="slideshow-box">
+        <div class="slideshow-inner">
+            <div class="slide active" style="background-image: url('{{ url_for('static', filename='images/int1.jpg') }}')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('static', filename='images/interior2.jpg') }}')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('static', filename='images/interior3.jpg') }}')"></div>
+            <div class="slide" style="background-image: url('{{ url_for('static', filename='images/interior4.jpg') }}')"></div>
+        </div>
+        <div class="box-overlay"></div>
+    </div>
+</section>
+
+<section class="services-interactive">
+    <div class="service-card" data-tilt>
+        <div class="service-icon">🏗️</div>
+        <h3>Civil Engineering</h3>
+    </div>
+    <div class="service-card" data-tilt>
+        <div class="service-icon">📐</div>
+        <h3>Architectural Design</h3>
+    </div>
+    <div class="service-card" data-tilt>
+        <div class="service-icon">🛋️</div>
+        <h3>Interior Planning</h3>
+    </div>
+</section>
+
+<script>
+    // Logic to rotate slides every 4 seconds
+    const boxSlides = document.querySelectorAll('.slideshow-box .slide');
+    let boxIndex = 0;
+
+    function rotateBoxSlides() {
+        boxSlides[boxIndex].classList.remove('active');
+        boxIndex = (boxIndex + 1) % boxSlides.length;
+        boxSlides[boxIndex].classList.add('active');
+    }
+
+    setInterval(rotateBoxSlides, 4000);
+</script>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Arc | Engineering & Design</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-container">
+        <div class="blueprint-grid"></div>
+   
+
+        <div class="floating-shape shape-grid"></div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="logo">
+            <span class="logo-text">STUDIO<b>ARC</b></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script>
+        // Subtle Parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.floating-shape');
+            const x = (window.innerWidth - e.pageX * 2) / 100;
+            const y = (window.innerHeight - e.pageY * 2) / 100;
+
+            shapes.forEach(shape => {
+                shape.style.transform = `translateX(${x}px) translateY(${y}px) rotate(45deg)`;
+            });
+        });
+    </script>
+</body>
+</html>
