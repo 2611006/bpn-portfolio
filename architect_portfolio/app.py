@@ -1,3 +1,12 @@
+from flask import Flask
+app = Flask(__name__)
+
+# ... your routes ...
+
+# This part is important for local testing, 
+# but Vercel will ignore it and use the 'app' object directly
+if __name__ == "__main__":
+    app.run()
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
@@ -47,3 +56,4 @@ def contact():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
